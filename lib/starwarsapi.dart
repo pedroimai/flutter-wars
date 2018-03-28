@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 class SimpleMovie {
   final String title;
   final String releaseDate;
-  final String address;
 
   SimpleMovie.fromJson(Map jsonMap)
       : title = jsonMap['title'],
