@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-class FlutterWarsKey{
+class FlutterWarsKey {
   //Screens
   static final movieListScreen = const Key('__movieListScreen__');
   static final movieDetailsScreen = const Key('__movieDetailsScreen__');

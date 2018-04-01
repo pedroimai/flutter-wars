@@ -14,10 +14,10 @@ class AppState {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is AppState &&
-              runtimeType == other.runtimeType &&
-              movies == other.movies &&
-              isLoading == other.isLoading;
+      other is AppState &&
+          runtimeType == other.runtimeType &&
+          movies == other.movies &&
+          isLoading == other.isLoading;
 
   @override
   String toString() {

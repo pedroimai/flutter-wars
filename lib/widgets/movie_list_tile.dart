@@ -10,8 +10,7 @@ class MovieListTile extends StatelessWidget {
     Key key,
     @required this.onTap,
     @required this.movie,
-  })
-      : super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutterwars/app.dart';
 import 'package:flutterwars/starwarsapi.dart';
