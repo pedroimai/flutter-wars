@@ -1,24 +1,22 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutterwars/movie.dart';
 import 'package:http/http.dart' as http;
 
-class SimpleMovie {
-  final String title;
-  final String releaseDate;
+class StarWarsApi {
 
-  SimpleMovie.fromJson(Map jsonMap)
-      : title = jsonMap['title'],
-        releaseDate = jsonMap['release_date'];
-}
 
-Future<Stream<SimpleMovie>> getMovies() async {
-  var url = "https://swapi.co/api/films";
-  var client = new http.Client();
-  var streamedRes = await client.send(new http.Request('get', Uri.parse(url)));
+  Future<List<SimpleMovie>> getMovies() async {
+    var url = "https://swapi.co/api/films";
+    var client = new http.Client();
+    var streamedResponse = await client.send(
+        new http.Request('get', Uri.parse(url)));
 
-  return streamedRes.stream
-      .transform(UTF8.decoder)
-      .transform(JSON.decoder)
-      .expand((jsonBody) => (jsonBody as Map)['results'])
-      .map((jsonMovie) => new SimpleMovie.fromJson(jsonMovie));
+    return streamedResponse.stream
+        .transform(utf8.decoder)
+        .transform(json.decoder)
+        .expand((jsonBody) => (jsonBody as Map)['results'])
+        .map((jsonMovie) => new SimpleMovie.fromJson(jsonMovie))
+        .toList();
+  }
 }
